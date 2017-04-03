@@ -11,5 +11,9 @@ setup(
     keywords = "",
     url = "",
     packages=['tensormoments'],
-    long_description=""
+    long_description="",
+    install_requires=[
+        "numpy",
+        "pandas",
+    ],
     )
