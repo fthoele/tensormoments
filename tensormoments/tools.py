@@ -3,6 +3,7 @@ import numpy as np
 from operator import and_
 from six import iteritems
 from functools import reduce
+import warnings
 
 
 def transformGroupToReal(dataframe):
@@ -15,6 +16,7 @@ def transformGroupToReal(dataframe):
         A copy of the old dataframe, containing the transformed elements.
 
     """
+    warnings.warn("Use new transformation transform_group_to_real", DeprecationWarning  )
     mult = len(dataframe)
     l = int((mult-1)/2)
     newDataframe = dataframe.copy()
@@ -30,6 +32,7 @@ def transformGroupToReal(dataframe):
         newDataframe.loc[newDataframe.t == m, "value"] = newValue    
     return newDataframe
 
+
 def filterTmoms(df, **kwargs):
     """ Returns all tensor moments to which the filter arguments in kwargs apply.
         Keys are: atom, species, nu, l1, l2, k, p, r, t
@@ -44,10 +47,13 @@ def filterTmoms(df, **kwargs):
         return df.loc[finalFilter]
     else:
         return df
-    
+
+
 def transformFrameToReal(dataframe):
     """ Transforms the given dataframe to the real spherical harmonic basis.
     """
+    warnings.warn("Use new transformation function transform_to_real", DeprecationWarning)
+
     grouped = dataframe.groupby(['k','p','r', 'atom', 'species','nu', 'l1', 'l2'])
     realList = []
     for name, group in grouped:
