@@ -122,7 +122,8 @@ def transform_group_to_real(g, group_columns, group_values):
 
 
 def insert_vectors_into_vesta(vectors, vesta_template_file, vector_scale=1.0,
-                              template_string_vectt="{VECTT}", template_string_vectr="{VECTR}", template_string_vects="{VECTS}"):
+                              template_string_vectt="{VECTT}", template_string_vectr="{VECTR}",
+                              template_string_vects="{VECTS}"):
     """ Replaces template string in a vesta file with the correct representation for a number of vectors.
 
     Args:
