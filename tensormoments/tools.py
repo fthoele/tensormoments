@@ -57,7 +57,6 @@ def transformFrameToReal(dataframe):
     return realdf
 
 
-
 def transform_to_real(dataframe):
     """ Improved version of the transformation. Takes dataframe, and transforms all pairs of (t, v) to their real representation.
 
